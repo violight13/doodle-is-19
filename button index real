@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Button Links — 19 pages</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1 class="sr-only">Navigation</h1>
+
+    <div id="buttonGrid" class="button-grid" aria-label="Pages"></div>
+  </main>
+
+  <script>
+    // Edit labels/texts array below: label is what's shown on the button,
+    // id is passed to page.html (page.html maps id -> full text).
+    const pages = [
+      { id: 1, label: 'Anthony' },
+      { id: 2, label: 'Michael' },
+      { id: 3, label: 'Havid' },
+      { id: 4, label: 'Benjamin' },
+      { id: 5, label: 'Austin' },
+      { id: 6, label: 'Richard' },
+      { id: 7, label: 'Alvin' },
+      { id: 8, label: 'Hirchomp' },
+      { id: 9, label: 'Felicia' },
+      { id: 10, label: 'Aarush' },
+      { id: 11, label: 'Jay' },
+      { id: 12, label: 'Abi' },
+      { id: 13, label: 'Gabe' },
+      { id: 14, label: 'Mahima' },
+      { id: 15, label: 'Los Padres' },
+      { id: 16, label: 'Varsha' },
+      { id: 17, label: 'Mark' },
+      { id: 18, label: 'Emily' },
+      { id: 19, label: 'Fworm' }
+    ];
+
+    const grid = document.getElementById('buttonGrid');
+    pages.forEach(p => {
+      const a = document.createElement('a');
+      a.className = 'btn';
+      // pass a short id instead of full text:
+      a.href = `page.html?id=${encodeURIComponent(p.id)}`;
+      a.textContent = p.label;
+      grid.appendChild(a);
+    });
+  </script>
+</body>
+</html>
