@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Button Links</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <!-- Accessible heading for screen-readers only -->
+    <h1 class="sr-only">Navigation</h1>
+
+    <div class="button-grid" aria-label="Pages">
+      <!-- Each anchor looks/acts like a button and goes to page.html with custom text -->
+      <a class="btn" href="page.html?text=Hello%20from%20Button%201">Button 1</a>
+      <a class="btn" href="page.html?text=Welcome%20to%20your%20custom%20page">Button 2</a>
+      <a class="btn" href="page.html?text=This%20is%20Button%203%20content">Button 3</a>
+    </div>
+  </main>
+</body>
+</html>
