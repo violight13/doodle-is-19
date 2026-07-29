@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;700&display=swap');
+
+:root {
+  --bg: #0f172a;
+  --card: #0b1220;
+  --accent: #06b6d4;
+  --text: #e6eef6;
+}
+
+* { box-sizing: border-box; }
+
+/* Use a rounded, bubbly font by default with system fallbacks */
+html,body {
+  height:100%;
+  margin:0;
+  font-family: "Fredoka", "Bubblegum Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* Page layout */
+main {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+.button-grid {
+  display:flex;
+  gap:1rem;
+  flex-direction:column;
+  width:320px;
+  align-items:stretch;
+}
+
+/* Bubbly button style */
+.btn {
+  display:inline-block;
+  text-decoration:none;
+  text-align:center;
+  padding:1.15rem 1.25rem;
+  border-radius:999px; /* pill-shaped for cute look */
+  background:linear-gradient(180deg,var(--accent),#0ea5a6);
+  color:#041022;
+  font-weight:700;
+  font-size:1.05rem;
+  letter-spacing:0.4px;
+  font-family: "Bubblegum Sans", "Fredoka", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  box-shadow:0 8px 22px rgba(2,6,23,0.55), inset 0 -6px 12px rgba(255,255,255,0.03);
+  border:0;
+  transition:transform .12s cubic-bezier(.2,.8,.2,1), box-shadow .12s ease;
+  text-shadow:0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* subtle bounce on hover/focus */
+.btn:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(2,6,23,0.6); }
+.btn:active { transform:translateY(0); }
+.btn:focus { outline:4px solid rgba(6,182,212,.12); outline-offset:6px; }
+
+/* screen-reader only heading */
+.sr-only {
+  position:absolute!important;
+  height:1px; width:1px; overflow:hidden;
+  clip:rect(1px,1px,1px,1px); white-space:nowrap;
+  border:0; padding:0; margin:-1px;
+}
