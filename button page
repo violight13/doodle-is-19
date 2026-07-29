@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Custom Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;">
+    <div style="max-width:900px;width:100%;background:#071028;padding:2rem;border-radius:10px;color:var(--text);text-align:center;">
+      <h1 id="customText" style="margin:0 0 1rem;font-size:clamp(1.25rem,3vw,2rem);">Loading…</h1>
+      <p style="opacity:.85;margin:0 0 1.25rem;">This page shows the custom text for the selected button.</p>
+      <a class="btn" href="index.html" style="display:inline-block">Back</a>
+    </div>
+  </main>
+
+  <script>
+    // Map ids to the exact text you want shown for each button.
+    // You can put longer paragraphs or multi-line text here.
+    const texts = {
+      "1": "This is the text for button 1.",
+      "2": "Text for button 2 goes here.",
+      "3": "Text for button 3 — customize this.",
+      "4": "Text for button 4.",
+      "5": "Text for button 5.",
+      "6": "Text for button 6.",
+      "7": "Text for button 7.",
+      "8": "Text for button 8.",
+      "9": "Text for button 9.",
+      "10": "Text for button 10.",
+      "11": "Text for button 11.",
+      "12": "Text for button 12.",
+      "13": "Text for button 13.",
+      "14": "Text for button 14.",
+      "15": "Text for button 15.",
+      "16": "Text for button 16.",
+      "17": "Text for button 17.",
+      "18": "Text for button 18.",
+      "19": "Text for button 19."
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const content = (id && texts[id]) ? texts[id] : 'No custom text provided for that id.';
+    // Use textContent to avoid injecting HTML. If you want HTML, use innerHTML carefully.
+    document.getElementById('customText').textContent = content;
+  </script>
+</body>
+</html>
